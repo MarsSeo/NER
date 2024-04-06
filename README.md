@@ -15,7 +15,7 @@ This is a code repository
 
 | Model       | Learning Rate | Batch Size | Epochs | TeA  | TeF1 | Te Recall | Te Precision | Time | device          | framework |
 |-------------|---------------|------------|--------|------|------|-----------|--------------|------|-----------------|-----------|
-| Bert-BiLSTM | 2e-4          | 16         | 1      | 0.58 | 0.71 | 0.58      | 0.94         |      | M3 Max 30 Cores | pytorch   |
+| Bert-BiLSTM | 2e-4          | 16         | 1      | 0.58 | 0.71 | 0.58      | 0.94         |11m5s      | M3 Max 30 Cores | pytorch   |
 | Bert-BiLSTM | 2e-4          | 16         | 2      |      |      |           |              |      | M3 Max 30 Cores | pytorch   |
 | Bert-BiLSTM | 2e-4          | 16         | 3      |      |      |           |              |      | M3 Max 30 Cores | pytorch   |
 | Bert-BiLSTM | 1e-5          | 16         | 4      |      |      |           |              |      | M3 Max 30 Cores | pytorch   |
