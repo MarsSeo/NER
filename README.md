@@ -14,6 +14,7 @@ This is a code repository
 
 |Model              |Learning Rate  |Batch Size |Epochs |TrA(MAX)|TrF1   |TeA    |TeF1   |Time       |device   |framework|
 |:--:               |:--:           |:--:       |:--:   |:--:   |:--:   |:--:   |:--:   |:--:       |:--:     |:--:     |
-|Bert-base-uncasesd |2e-5           |16         |3      |0.7221 |       |0.6408 |       |5m26.3s|RTX4060Ti16G|tensorflow|
+|Bert-base-uncasesd |2e-5           |16         |3      |0.7221 |       |0.6408 |       |5m26.3s    |RTX4060Ti16G|tensorflow|
+|Bert-large-uncasesd|2e-5           |16         |3      |0.8142 |       |0.7063 |       |14m1.3s    |RTX4060Ti16G|tensorflow|
 
 Some small not-syntax bugs exist in NRE problem. Using categorical accuracy.
