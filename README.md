@@ -1,6 +1,7 @@
 This is a code repository
 
-# NER results
+# 1. NER Task
+## 1.1. BERT BASE NER results
 
 |Model              |Learning Rate  |Batch Size |Epochs |TrA    |TrF1   |TeA    |TeF1   |Time       |device   |framework|
 |:--:               |:--:           |:--:       |:--:   |:--:   |:--:   |:--:   |:--:   |:--:       |:--:     |:--:     |
@@ -10,7 +11,17 @@ This is a code repository
 |Bert-base-uncasesd |1e-5           |16         |3      |       |       |0.4160 |0.5503 |17m46.5s   |RTX4060Ti16G|pytorch|
 |Bert-base-uncasesd |5e-5           |16         |3      |       |       |0.6541 |0.7800 |17m56.8s   |RTX4060Ti16G|pytorch|
 
-# NRE results
+## 1.2. Customized BERT-BiLSTM NER results
+
+|Model      |Learning Rate  |Batch Size |Epochs |TrA    |TrF1   |TeA    |TeF1   |Time       |device   |framework|
+|:--:       |:--:           |:--:       |:--:   |:--:   |:--:   |:--:   |:--:   |:--:       |:--:     |:--:     |
+|Bert-BiLSTM|2e-4           |16         |3      |       |       |       |       |           |M3       |pytorch  |
+|Bert-BiLSTM|2e-4           |16         |4      |       |       |       |       |           |M3       |pytorch  |
+|Bert-BiLSTM|2e-4           |16         |5      |       |       |       |       |           |M3       |pytorch  |
+|Bert-BiLSTM|1e-5           |16         |3      |       |       |       |       |           |M3       |pytorch  |
+|Bert-BiLSTM|5e-5           |16         |3      |       |       |       |       |           |M3       |pytorch  |
+
+# 2. NRE results
 
 |Model              |Learning Rate  |Batch Size |Epochs |TrA(MAX)|TrF1   |TeA    |TeF1   |Time       |device   |framework|
 |:--:               |:--:           |:--:       |:--:   |:--:   |:--:   |:--:   |:--:   |:--:       |:--:     |:--:     |
