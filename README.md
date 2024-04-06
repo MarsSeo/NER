@@ -5,7 +5,7 @@ This is a code repository
 
 |Model              |Learning Rate  |Batch Size |Epochs |TrA    |TrF1   |TeA    |TeF1   |Time       |device   |framework|
 |:--:               |:--:           |:--:       |:--:   |:--:   |:--:   |:--:   |:--:   |:--:       |:--:     |:--:     |
-|Bert-base-uncasesd |2e-4           |16         |3      |       |       |0.66   |0.78   |           |M3 Max 30 GPU Cores|pytorch  |
+|Bert-base-uncasesd |2e-4           |16         |3      |       |       |0.66   |0.78   |           |M3 Max 30 Cores|pytorch  |
 |Bert-base-uncasesd |2e-4           |16         |4      |       |       |0.6516 |0.7773 |25m54.8s   |RTX4060Ti16G|pytorch|
 |Bert-base-uncasesd |2e-4           |16         |5      |       |       |0.6646 |0.7832 |21m3.1s    |RTX4060Ti16G|pytorch|
 |Bert-base-uncasesd |1e-5           |16         |3      |       |       |0.4160 |0.5503 |17m46.5s   |RTX4060Ti16G|pytorch|
@@ -13,13 +13,13 @@ This is a code repository
 
 ## 1.2. Customized BERT-BiLSTM NER results
 
-|Model      |Learning Rate  |Batch Size |Epochs |TrA    |TrF1   |TeA    |TeF1   |Time       |device   |framework|
+|Model      |Learning Rate  |Batch Size |Epochs |TrA    |TrF1   |TeA    |TeF1 |Te Recall | Te Precision|  |Time       |device   |framework|
 |:--:       |:--:           |:--:       |:--:   |:--:   |:--:   |:--:   |:--:   |:--:       |:--:     |:--:     |
-|Bert-BiLSTM|2e-4           |16         |3      |       |       |       |       |           |M3 Max 30 GPU Cores|pytorch  |
-|Bert-BiLSTM|2e-4           |16         |4      |       |       |       |       |           |M3 Max 30 GPU Cores|pytorch  |
-|Bert-BiLSTM|2e-4           |16         |5      |       |       |       |       |           |M3 Max 30 GPU Cores|pytorch  |
-|Bert-BiLSTM|1e-5           |16         |3      |       |       |       |       |           |M3 Max 30 GPU Cores|pytorch  |
-|Bert-BiLSTM|5e-5           |16         |3      |       |       |       |       |           |M3 Max 30 GPU Cores|pytorch  |
+|Bert-BiLSTM|2e-4           |16         |1      |       |       |       |       |        |            |         |     |M3 Max 30 Cores|pytorch|
+|Bert-BiLSTM|2e-4           |16         |2      |       |       |       |       |        |            |         |     |M3 Max 30 Cores|pytorch|
+|Bert-BiLSTM|2e-4           |16         |3      |       |       |       |       |        |            |         |     |M3 Max 30 Cores|pytorch|
+|Bert-BiLSTM|1e-5           |16         |4      |       |       |       |       |        |            |         |     |M3 Max 30 Cores|pytorch|
+|Bert-BiLSTM|5e-5           |16         |5      |       |       |       |       |        |            |         |     |M3 Max 30 Cores|pytorch|
 
 # 2. NRE results
 
