@@ -13,13 +13,13 @@ This is a code repository
 
 ## 1.2. Customized BERT-BiLSTM NER results
 
-| Model       | Learning Rate | Batch Size | Epochs | Acc  | F1   | Recall | Precision | Time | device      | framework |
-|-------------|---------------|------------|--------|------|------|--------|-----------|------|-------------|-----------|
-| B-BiLSTM | 2e-4          | 16         | 1      | 0.58 | 0.71 | 0.58   | 0.94      | 11m5s| M3 Max 30     | pytorch   |
-| B-BiLSTM | 2e-4          | 16         | 2      | 0.59 | 0.73 | 0.59   | 0.95      | 11m2s| M3 Max 30   | pytorch   |
-| B-BiLSTM | 2e-4          | 16         | 3      |      |      |        |           |      | M3 Max 30   | pytorch   |
-| B-BiLSTM | 1e-5          | 16         | 4      |      |      |        |           |      | M3 Max 30   | pytorch   |
-| B-BiLSTM | 5e-5          | 16         | 5      |      |      |        |           |      | M3 Max 30   | pytorch   |
+| Model       | Learning Rate | Batch Size | Epochs | Acc  | F1   | Recall | Precision | Time | device      |
+|-------------|---------------|------------|--------|------|------|--------|-----------|------|-------------|
+| B-BiLSTM | 2e-4          | 16         | 1      | 0.58 | 0.71 | 0.58   | 0.94      | 11m5s| M3 Max 30     |
+| B-BiLSTM | 2e-4          | 16         | 2      | 0.59 | 0.73 | 0.59   | 0.95      | 11m2s| M3 Max 30   |
+| B-BiLSTM | 2e-4          | 16         | 3      |      |      |        |           |      | M3 Max 30   |
+| B-BiLSTM | 1e-5          | 16         | 4      |      |      |        |           |      | M3 Max 30   |
+| B-BiLSTM | 5e-5          | 16         | 5      |      |      |        |           |      | M3 Max 30   | 
 
 
 
