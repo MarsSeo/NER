@@ -1,12 +1,12 @@
 This is a code repository
 
 # 1. NER Task
-## 1.1. BERT BASE NER results
+## 1.1. BertBase(Classification Fine Tuned) NER results
 
 | Model | Learning Rate | Batch Size | Epochs | Acc  | F1   | Recall | Precision | Time  | Device     | Framework |
 |-------|---------------|------------|--------|------|------|--------|-----------|-------|------------|-----------|
 | Bert  | 2e-4          | 16         | 1      | 0.56 | 0.70 | 0.56   | 0.95      | 09m23s | M3 Max 30  | PyTorch   |
-| Bert  | 2e-4          | 16         | 2      |      |      |        |           |        | M3 Max 30  | PyTorch   |
+| Bert  | 2e-4          | 16         | 2      | 0.69 | 0.80 | 0.69   | 0.95      | 09m12s | M3 Max 30  | PyTorch   |
 | Bert  | 2e-4          | 16         | 3      |      |      |        |           |        | M3 Max 30  | PyTorch   |
 | Bert  | 2e-4          | 16         | 4      |      |      |        |           |        | M3 Max 30  | PyTorch   |
 | Bert  | 2e-4          | 16         | 5      |      |      |        |           |        | M3 Max 30  | PyTorch   |
