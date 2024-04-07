@@ -1,6 +1,6 @@
 This is a code repository
 
-# 1. NER Task
+# <center>1. NER Task</center>
 ## 1.1. BertBase(Classification Fine Tuned) NER results
 
 | Model | Learning Rate | Batch Size | Epochs | Acc  | F1   | Recall | Precision | Time  | Device     | Framework |
@@ -23,7 +23,7 @@ This is a code repository
 | Bert-BiLSTM | 2e-4          | 16         | 5      | 0.61 | 0.74 | 0.61   | 0.95      | 11m5s | M3 Max 30   | PyTorch   |
 
 
-# 2. NRE results
+# <center>2. NRE results</center>
 
 |Model              |Learning Rate  |Batch Size |Epochs |TrA(MAX)|TrF1   |TeA    |TeF1   |Time       |device   |framework|
 |:--:               |:--:           |:--:       |:--:   |:--:   |:--:   |:--:   |:--:   |:--:       |:--:     |:--:     |
