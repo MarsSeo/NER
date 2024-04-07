@@ -9,7 +9,7 @@ This is a code repository
 | Bert  | 2e-4          | 16         | 2      | 0.69 | 0.80 | 0.69   | 0.95      | 09m12s | M3 Max 30  | PyTorch   |
 | Bert  | 2e-4          | 16         | 3      | 0.56 | 0.71 | 0.56   | 0.96      | 09m15s | M3 Max 30  | PyTorch   |
 | Bert  | 2e-4          | 16         | 4      | 0.64 | 0.77 | 0.64   | 0.96      | 09m23s | M3 Max 30  | PyTorch   |
-| Bert  | 2e-4          | 16         | 5      |      |      |        |           |        | M3 Max 30  | PyTorch   |
+| Bert  | 2e-4          | 16         | 5      | 0.65 | 0.78 | 0.65   | 0.95      | 09m39  | M3 Max 30  | PyTorch   |
 
 
 ## 1.2. Customized BERT-BiLSTM NER results
