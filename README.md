@@ -35,6 +35,16 @@ This is a code repository
 | Bert-BiLSTM | 2e-4          | 16         | 4      | 0.69 | 0.80 | 0.69   | 0.95      | 11m5s | M3 Max 30   | PyTorch   |
 | Bert-BiLSTM | 2e-4          | 16         | 5      | 0.61 | 0.74 | 0.61   | 0.95      | 11m5s | M3 Max 30   | PyTorch   |
 
+## 1.3. RoBERTa-base NER results with MAXLENGTH 128
+
+| Model        | Learning Rate | Batch Size | Epochs |  Acc   | F1     | Recall | Precision | Time  | Device       | Framework |
+|--------------|---------------|------------|--------|--------|--------|--------|-----------|-------|--------------|-----------|
+| RoBERTa-base | 2e-4          | 16         | 1      | 0.5223 | 0.6748 | 0.5223 | 0.9586    | 1m8s  | RTX4060Ti16G | PyTorch   |
+| RoBERTa-base | 2e-4          | 16         | 2      | 0.6368 | 0.7643 | 0.6368 | 0.9598    | 1m5s  | RTX4060Ti16G | PyTorch   |
+| RoBERTa-base | 2e-4          | 16         | 3      | 0.5882 | 0.7310 | 0.5882 | 0.9671    | 1m5s  | RTX4060Ti16G | PyTorch   |
+| RoBERTa-base | 2e-4          | 16         | 4      | 0.6434 | 0.7702 | 0.6435 | 0.9631    | 1m5s  | RTX4060Ti16G | PyTorch   |
+| RoBERTa-base | 2e-4          | 16         | 5      | 0.6230 | 0.7546 | 0.6230 | 0.9579    | 1m5s  | RTX4060Ti16G | PyTorch   |
+
 
 # <center>2. NRE results</center>
 
