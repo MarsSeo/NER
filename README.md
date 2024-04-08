@@ -17,11 +17,11 @@ This is a code repository
 
 | Epochs | Batch Size | Accuracy |   F1   | Recall | Precision |  Time  |   Device    | Framework |
 |:------:|:----------:|:--------:|:------:|:------:|:---------:|:------:|:-----------:|:---------:|
-|   1    |     16     |   0.00   |  0.00  |  0.00  |   0.00    | 00 | T4 GPU   M3 Max 30   |  PyTorch  |
-|   2    |     16     |   0.00   |  0.00  |  0.00  |   0.00    | 00 | T4 GPU   M3 Max 30   |  PyTorch  |
-|   3    |     16     |   0.00   |  0.00  |  0.00  |   0.00    | 00 | T4 GPU   M3 Max 30   |  PyTorch  |
-|   4    |     16     |   0.00   |  0.00  |  0.00  |   0.00    | 00 | T4 GPU   M3 Max 30   |  PyTorch  |
-|   5    |     16     |   0.00   |  0.00  |  0.00  |   0.00    | 00 | T4 GPU   M3 Max 30   |  PyTorch  |
+|   1    |     16     |   0.00   |  0.00  |  0.00  |   0.00    | 00 | M3 Max 30   |  PyTorch  |
+|   2    |     16     |   0.00   |  0.00  |  0.00  |   0.00    | 00 | M3 Max 30   |  PyTorch  |
+|   3    |     16     |   0.00   |  0.00  |  0.00  |   0.00    | 00 | M3 Max 30   |  PyTorch  |
+|   4    |     16     |   0.00   |  0.00  |  0.00  |   0.00    | 00 | M3 Max 30   |  PyTorch  |
+|   5    |     16     |   0.00   |  0.00  |  0.00  |   0.00    | 00 | M3 Max 30   |  PyTorch  |
 
 
 
