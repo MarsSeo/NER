@@ -21,7 +21,7 @@ This is a code repository
 |   2    |     16     |   0.47   |  0.62  |  0.47  |   0.95    | 10m23s | M3 Max 30   |  PyTorch  |
 |   3    |     16     |   0.61   |  0.74  |  0.61  |   0.96    | 10m17s | M3 Max 30   |  PyTorch  |
 |   4    |     16     |   0.69   |  0.80  |  0.69  |   0.96    | 19m57s | M3 Max 30   |  PyTorch  |
-|   5    |     16     |   0.00   |  0.00  |  0.00  |   0.00    | 00 | M3 Max 30   |  PyTorch  |
+|   5    |     16     |   0.71   |  0.82  |  0.72  |   0.71    | 11m25s | M3 Max 30   |  PyTorch  |
 
 
 
