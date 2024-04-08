@@ -17,7 +17,7 @@ This is a code repository
 
 | Epochs | Batch Size | Accuracy |   F1   | Recall | Precision |  Time  |   Device    | Framework |
 |:------:|:----------:|:--------:|:------:|:------:|:---------:|:------:|:-----------:|:---------:|
-|   1    |     16     |   0.39   |  0.53  |  0.39  |   0.92    | 00 | M3 Max 30   |  PyTorch  |
+|   1    |     16     |   0.39   |  0.53  |  0.39  |   0.92    | 10m34s | M3 Max 30   |  PyTorch  |
 |   2    |     16     |   0.00   |  0.00  |  0.00  |   0.00    | 00 | M3 Max 30   |  PyTorch  |
 |   3    |     16     |   0.00   |  0.00  |  0.00  |   0.00    | 00 | M3 Max 30   |  PyTorch  |
 |   4    |     16     |   0.00   |  0.00  |  0.00  |   0.00    | 00 | M3 Max 30   |  PyTorch  |
