@@ -3,18 +3,26 @@ This is a code repository
 # <center>1. NER Task</center>
 ## 1.1. BertBase(Classification Fine Tuned) NER results
 
-| Model | Learning Rate | Batch Size | Epochs | Acc  | F1   | Recall | Precision | Time  | Device     | Framework |
-|-------|---------------|------------|--------|------|------|--------|-----------|-------|------------|-----------|
-| Bert-Base  | 2e-4          | 16         | 1      | 0.56 | 0.70 | 0.56   | 0.95      | 09m23s | M3 Max 30  | PyTorch   |
-| Bert-Base  | 2e-4          | 16         | 2      | 0.69 | 0.80 | 0.69   | 0.95      | 09m12s | M3 Max 30  | PyTorch   |
-| Bert-Base  | 2e-4          | 16         | 3      | 0.56 | 0.71 | 0.56   | 0.96      | 09m15s | M3 Max 30  | PyTorch   |
-| Bert-Base  | 2e-4          | 16         | 4      | 0.64 | 0.77 | 0.64   | 0.96      | 09m23s | M3 Max 30  | PyTorch   |
-| Bert-Base  | 2e-4          | 16         | 5      | 0.65 | 0.78 | 0.65   | 0.95      | 09m39s | M3 Max 30  | PyTorch   |
-| Bert-Base  | 3e-5          | 16         | 1      | 0.56 | 0.69 | 0.56   | 0.95      | 10m17s | T4 GPU     | PyTorch   |
-| Bert-Base  | 3e-5          | 16         | 2      | 0.61 | 0.74 | 0.61   | 0.95      | 10m30s | T4 GPU     | PyTorch   |
-| Bert-Base  | 3e-5          | 16         | 3      | 0.56 | 0.69 | 0.56   | 0.95      | 10m17s | T4 GPU     | PyTorch   |
-| Bert-Base  | 3e-5          | 16         | 4      | 0.61 | 0.74 | 0.61   | 0.95      | 10m30s | T4 GPU     | PyTorch   |
-| Bert-Base  | 3e-5          | 16         | 5      | 0.61 | 0.74 | 0.61   | 0.95      | 10m30s | T4 GPU     | PyTorch   |
+### Bert-Base Model with Learning Rate 2e-4
+
+| Epochs | Batch Size | Accuracy |   F1   | Recall | Precision |  Time  |   Device    | Framework |
+|:------:|:----------:|:--------:|:------:|:------:|:---------:|:------:|:-----------:|:---------:|
+|   1    |     16     |   0.56   |  0.70  |  0.56  |   0.95    | 09m23s | M3 Max 30   |  PyTorch  |
+|   2    |     16     |   0.69   |  0.80  |  0.69  |   0.95    | 09m12s | M3 Max 30   |  PyTorch  |
+|   3    |     16     |   0.56   |  0.71  |  0.56  |   0.96    | 09m15s | M3 Max 30   |  PyTorch  |
+|   4    |     16     |   0.64   |  0.77  |  0.64  |   0.96    | 09m23s | M3 Max 30   |  PyTorch  |
+|   5    |     16     |   0.65   |  0.78  |  0.65  |   0.95    | 09m39s | M3 Max 30   |  PyTorch  |
+
+### Bert-Base Model with Learning Rate 3e-5
+
+| Epochs | Batch Size | Accuracy |   F1   | Recall | Precision |  Time  |   Device    | Framework |
+|:------:|:----------:|:--------:|:------:|:------:|:---------:|:------:|:-----------:|:---------:|
+|   1    |     16     |   0.56   |  0.69  |  0.56  |   0.95    | 10m17s | T4 GPU      |  PyTorch  |
+|   2    |     16     |   0.61   |  0.74  |  0.61  |   0.95    | 10m30s | T4 GPU      |  PyTorch  |
+|   3    |     16     |   0.56   |  0.69  |  0.56  |   0.95    | 10m17s | T4 GPU      |  PyTorch  |
+|   4    |     16     |   0.61   |  0.74  |  0.61  |   0.95    | 10m30s | T4 GPU      |  PyTorch  |
+|   5    |     16     |   0.61   |  0.74  |  0.61  |   0.95    | 10m30s | T4 GPU      |  PyTorch  |
+
 
 
 ## 1.2. Customized BERT-BiLSTM NER results
