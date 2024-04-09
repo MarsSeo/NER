@@ -21,13 +21,13 @@ semeval_test.txt: Contains 2717 samples in the same format as the training and v
 Sample Format: {"token": ["trees", "grow", "seeds", "."], "h": {"name": "trees", "pos": [0, 1]}, "t": {"name": "seeds", "pos": [2, 3]}, "relation": "Product-Producer(e2,e1)"}
 
 ## Hardware and Software Specifications
-Hardware Configurations:
-CPUs: M3 MAX 16 Core, Intel core i5-12700, AMD Ryzen 7 6800H
-GPUs: M3 MAX 30, RTX4060TiAdvanced16G, T4 GPU (Google Colab)
-Software:
-Operating Systems: Windows, Mac
-Programming Language: Python
-Frameworks: PyTorch, TensorFlow, Transformers
+Hardware Configurations:<br>
+CPUs: M3 MAX 16 Core, Intel core i5-12700, AMD Ryzen 7 6800H<br>
+GPUs: M3 MAX 30, RTX4060TiAdvanced16G, T4 GPU (Google Colab)<br>
+Software:<br>
+Operating Systems: Windows, Mac<br>
+Programming Language: Python<br>
+Frameworks: PyTorch, TensorFlow, Transformers<br>
 
 
 ## 3. Novel Approaches
