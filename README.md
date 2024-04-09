@@ -1,9 +1,47 @@
-This is a code repository
+# 1. Introduction
 
-# <center>1. NER Task</center>
+## Objective
+This project aims to explore the capabilities of advanced NLP models in relation extraction tasks, utilizing the SemEval dataset. We focus on training and comparing the performance of three models: BERT, BERT-BiLSTM, and RoBERTa, to understand their effectiveness in understanding and extracting complex relationships within text.
+
+## Importance
+Relation extraction is a crucial component in the realm of Natural Language Processing. It enables the understanding and mapping of semantic relationships between entities in a text, which is fundamental for various applications such as information retrieval, knowledge graph construction, and data mining.
+
+## Overview of Models
+BERT (Bidirectional Encoder Representations from Transformers): Known for its deep bidirectional nature, BERT sets a new standard in NLP for understanding context and semantics.
+BERT-BiLSTM: Our customized model enhances BERT with a Bi-directional Long Short-Term Memory (BiLSTM) layer, aiming to capture sequential data more effectively, especially in long sentences.
+RoBERTa (Robustly Optimized BERT Pretraining Approach): An optimized version of BERT, RoBERTa modifies key hyperparameters, removing the next-sentence pretraining objective and training with much larger mini-batches and learning rates.
+
+# 2. Background
+## SemEval Dataset Overview
+The SemEval dataset is a rich and structured collection designed for training and evaluating relation extraction models. It includes:
+
+semeval_rel2id.json: This file maps various relationships to their indices. Each relationship is listed twice due to the varying positions of two entities, leading to a total of 19 unique relationships including the 'Other' category.
+semeval_train.txt & semeval_val.txt: These files split the original training set into training (6507 samples) and validation (1493 samples) subsets, formatted in JSON, and group samples by their relationships.
+semeval_test.txt: Contains 2717 samples in the same format as the training and validation sets.
+Sample Format: {"token": ["trees", "grow", "seeds", "."], "h": {"name": "trees", "pos": [0, 1]}, "t": {"name": "seeds", "pos": [2, 3]}, "relation": "Product-Producer(e2,e1)"}
+
+## Hardware and Software Specifications
+Hardware Configurations:
+CPUs: M3 MAX 16 Core, Intel core i5-12700, AMD Ryzen 7 6800H
+GPUs: M3 MAX 30, RTX4060TiAdvanced16G, T4 GPU (Google Colab)
+Software:
+Operating Systems: Windows, Mac
+Programming Language: Python
+Frameworks: PyTorch, TensorFlow, Transformers
+
+
+## 3. Novel Approaches
+## Customized Model - BERT-BiLSTM
+The BERT-BiLSTM model is a novel approach in our study. We append a bidirectional LSTM layer to the last layer of the BERT model. This integration aims to leverage both the deep contextual understanding of BERT and the sequential data processing capability of BiLSTM. It is particularly designed to improve relation extraction from longer sentences where context dispersion is common.
+
+## Evaluation Metrics
+We employ precision, recall, and F1-score to evaluate the model's performance. These metrics are crucial for understanding the balance between accurately identifying relationships and the model's ability to detect as many relevant relations as possible.
+
+# 4. NER Results
+
 ![image](https://github.com/MarsSeo/NER/assets/103374757/64e875da-9b1b-412a-9e35-5557af9c57ca)
 
-## 1.1. BertBase(Classification Fine Tuned) NER results
+## 4.1. BertBase(Classification Fine Tuned) NER results
 
 ### Bert-Base Model with Learning Rate 2e-4
 
@@ -37,7 +75,7 @@ This is a code repository
 
 
 
-## 1.2. Customized BERT-BiLSTM NER results
+## 4.2. Customized BERT-BiLSTM NER results
 
 | Model       | Learning Rate | Batch Size | Epochs | Acc  | F1   | Recall | Precision | Time  | Device      | Framework |
 |-------------|---------------|------------|--------|------|------|--------|-----------|-------|-------------|-----------|
@@ -47,7 +85,7 @@ This is a code repository
 | Bert-BiLSTM | 2e-4          | 16         | 4      | 0.69 | 0.80 | 0.69   | 0.95      | 11m5s | M3 Max 30   | PyTorch   |
 | Bert-BiLSTM | 2e-4          | 16         | 5      | 0.61 | 0.74 | 0.61   | 0.95      | 11m5s | M3 Max 30   | PyTorch   |
 
-## 1.3. RoBERTa-base NER results with MAXLENGTH 128
+## 4.3. RoBERTa-base NER results with MAXLENGTH 128
 
 | Model        | Learning Rate | Batch Size | Epochs |  Acc   | F1     | Recall | Precision | Time  | Device       | Framework |
 |--------------|---------------|------------|--------|--------|--------|--------|-----------|-------|--------------|-----------|
@@ -58,7 +96,8 @@ This is a code repository
 | RoBERTa-base | 2e-4          | 16         | 5      | 0.6230 | 0.7546 | 0.6230 | 0.9579    | 1m5s  | RTX4060Ti16G | PyTorch   |
 
 
-# <center>2. NRE results</center>
+# 5. NRE (Relation Extraction) Results
+
 ![image](https://github.com/MarsSeo/NER/assets/103374757/0ce2cbec-004a-4a94-b689-cf0661abc42c)
 
 
