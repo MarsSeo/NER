@@ -68,6 +68,7 @@ This is a code repository
 | Bert-Large*   |      3e-5     |     16     |   5    | 0.7777 | 0.7241 | 0.7382 |   0.7665  | 24m55.3s | RTX4060Ti16G    | TensorFlow |
 | RoBERTa-Base  |      3e-5     |     16     |   3    | 0.7575 | 0.7073 | 0.7205 |   0.7502  | 11m57.0s | RTX4060Ti16G    | TensorFlow |
 | RoBERTa-Base* |      3e-5     |     16     |   5    | 0.7722 | 0.7246 | 0.7347 |   0.7698  | 21m40.0s | RTX4060Ti16G    | TensorFlow |
+| RoBERTA-Large |      3e-5     |     16     |   5    | 0.7806 | 0.7293 | 0.7463 |   0.7703  | 19m47.1s | RTX4060Ti16G    | TensorFlow |
 | RoBERTA-Large |      3e-5     |     16     |   5    | 0.7835 | 0.7391 | 0.7457 |   0.7879  | 35m29.3s | RTX4060Ti16G    | TensorFlow |
 
 
