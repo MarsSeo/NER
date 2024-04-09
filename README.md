@@ -1,6 +1,8 @@
 This is a code repository
 
 # <center>1. NER Task</center>
+![image](https://github.com/MarsSeo/NER/assets/103374757/64e875da-9b1b-412a-9e35-5557af9c57ca)
+
 ## 1.1. BertBase(Classification Fine Tuned) NER results
 
 ### Bert-Base Model with Learning Rate 2e-4
@@ -57,6 +59,8 @@ This is a code repository
 
 
 # <center>2. NRE results</center>
+![image](https://github.com/MarsSeo/NER/assets/103374757/0ce2cbec-004a-4a94-b689-cf0661abc42c)
+
 
 | Model         | Learning Rate | Batch Size | Epochs | Acc    | F1(ma) | Recall | Precision |   Time   |     Device      | Framework  |
 |:-------------:|:-------------:|:----------:|:------:|:------:|:------:|:------:|:---------:|:--------:|:---------------:|:----------:|
