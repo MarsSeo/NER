@@ -5,16 +5,23 @@ This is a code repository
 
 ### Bert-Base Model with Learning Rate 2e-4
 
-| Epochs | Batch Size | Accuracy |   F1   | Recall | Precision |  Time  |   Device    | Framework |
-|:------:|:----------:|:--------:|:------:|:------:|:---------:|:------:|:-----------:|:---------:|
-|   1    |     16     |   0.56   |  0.70  |  0.56  |   0.95    | 09m23s | M3 Max 30   |  PyTorch  |
-|   2    |     16     |   0.69   |  0.80  |  0.69  |   0.95    | 09m12s | M3 Max 30   |  PyTorch  |
-|   3    |     16     |   0.56   |  0.71  |  0.56  |   0.96    | 09m15s | M3 Max 30   |  PyTorch  |
-|   4    |     16     |   0.64   |  0.77  |  0.64  |   0.96    | 09m23s | M3 Max 30   |  PyTorch  |
-|   5    |     16     |   0.65   |  0.78  |  0.65  |   0.95    | 09m39s | M3 Max 30   |  PyTorch  |
-|   1    |     8      |   0.56   |  0.69  |  0.56  |   0.95    | 10m17s | T4 GPU      |  PyTorch  |
-|   2    |     8      |   0.61   |  0.74  |  0.61  |   0.95    | 10m30s | T4 GPU      |  PyTorch  |
-|   2    |     8      |   0.69   |  0.73  |  0.61  |   0.95    | 10m28s | T4 GPU      |  PyTorch  |
+#### (1) Batch Size: 16
+
+| Epochs | Accuracy |   F1   | Recall | Precision |  Time  |   Device    | Framework |
+|:------:|:--------:|:------:|:------:|:---------:|:------:|:-----------:|:---------:|
+|   1    |   0.56   |  0.70  |  0.56  |   0.95    | 09m23s | M3 Max 30   |  PyTorch  |
+|   2    |   0.69   |  0.80  |  0.69  |   0.95    | 09m12s | M3 Max 30   |  PyTorch  |
+|   3    |   0.56   |  0.71  |  0.56  |   0.96    | 09m15s | M3 Max 30   |  PyTorch  |
+|   4    |   0.64   |  0.77  |  0.64  |   0.96    | 09m23s | M3 Max 30   |  PyTorch  |
+|   5    |   0.65   |  0.78  |  0.65  |   0.95    | 09m39s | M3 Max 30   |  PyTorch  |
+
+#### (2) Batch Size: 8
+
+| Epochs | Accuracy |   F1   | Recall | Precision |  Time  |   Device    | Framework |
+|:------:|:--------:|:------:|:------:|:---------:|:------:|:-----------:|:---------:|
+|   1    |   0.56   |  0.69  |  0.56  |   0.95    | 10m17s | T4 GPU      |  PyTorch  |
+|   2    |   0.61   |  0.74  |  0.61  |   0.95    | 10m30s | T4 GPU      |  PyTorch  |
+|   3    |   0.69   |  0.73  |  0.61  |   0.95    | 10m28s | T4 GPU      |  PyTorch  |
 
 ### Bert-Base Model with Learning Rate 3e-5
 
