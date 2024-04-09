@@ -21,15 +21,13 @@ semeval_rel2id.json: This file maps various relationships to their indices. Each
 leading to a total of 19 unique relationships including the 'Other' category. semeval_train.txt & semeval_val.txt:
 These files split the original training set into training (6507 samples) and validation (1493 samples) subsets, formatted in JSON, and group samples by their relationships.
 semeval_test.txt: Contains 2717 samples in the same format as the training and validation sets.<br>
-Sample Format: {"token": ["trees", "grow", "seeds", "."], "h": {"name": "trees", "pos": [0, 1]}, "t": {"name": "seeds", "pos": [2, 3]}, "relation": "Product-Producer(e2,e1)"}<br>
 
 ## 2.2. Hardware and Software Specifications
 Hardware Configurations:<br>
 CPUs: M3 MAX 16 Core, Intel core i5-12700, AMD Ryzen 7 6800H<br>
 GPUs: M3 MAX 30, RTX4060TiAdvanced16G, T4 GPU (Google Colab)<br>
-Software:<br>
-Operating Systems: Windows, Mac<br>
-Programming Language: Python<br>
+Software Configurations:<br>
+Operating Systems: Windows, Mac; ;Programming Language: Python<br>
 Frameworks: PyTorch, TensorFlow, Transformers<br>
 
 
