@@ -1,18 +1,18 @@
 # 1. Introduction
 
-## Objective
+## 1.1. Objective
 This project aims to explore the capabilities of advanced NLP models in relation extraction tasks, utilizing the SemEval dataset. We focus on training and comparing the performance of three models: BERT, BERT-BiLSTM, and RoBERTa, to understand their effectiveness in understanding and extracting complex relationships within text.
 
-## Importance
+## 1.2. Importance
 Relation extraction is a crucial component in the realm of Natural Language Processing. It enables the understanding and mapping of semantic relationships between entities in a text, which is fundamental for various applications such as information retrieval, knowledge graph construction, and data mining.
 
-## Overview of Models
+## 1.3. Overview of Models
 BERT (Bidirectional Encoder Representations from Transformers): Known for its deep bidirectional nature, BERT sets a new standard in NLP for understanding context and semantics.
 BERT-BiLSTM: Our customized model enhances BERT with a Bi-directional Long Short-Term Memory (BiLSTM) layer, aiming to capture sequential data more effectively, especially in long sentences.
 RoBERTa (Robustly Optimized BERT Pretraining Approach): An optimized version of BERT, RoBERTa modifies key hyperparameters, removing the next-sentence pretraining objective and training with much larger mini-batches and learning rates.
 
 # 2. Background
-## SemEval Dataset Overview
+## 2.1. SemEval Dataset Overview
 <img width="836" alt="image" src="https://github.com/MarsSeo/NER/assets/103374757/0355e98d-61ce-4022-8e30-26c50cab19a7">
 
 The SemEval dataset is a rich and structured collection designed for training and evaluating relation extraction models. It includes:
@@ -23,7 +23,7 @@ These files split the original training set into training (6507 samples) and val
 semeval_test.txt: Contains 2717 samples in the same format as the training and validation sets.<br>
 Sample Format: {"token": ["trees", "grow", "seeds", "."], "h": {"name": "trees", "pos": [0, 1]}, "t": {"name": "seeds", "pos": [2, 3]}, "relation": "Product-Producer(e2,e1)"}<br>
 
-## Hardware and Software Specifications
+## 2.2. Hardware and Software Specifications
 Hardware Configurations:<br>
 CPUs: M3 MAX 16 Core, Intel core i5-12700, AMD Ryzen 7 6800H<br>
 GPUs: M3 MAX 30, RTX4060TiAdvanced16G, T4 GPU (Google Colab)<br>
@@ -34,10 +34,10 @@ Frameworks: PyTorch, TensorFlow, Transformers<br>
 
 
 ## 3. Novel Approaches
-## Customized Model - BERT-BiLSTM
+## 3.1. Customized Model - BERT-BiLSTM
 The BERT-BiLSTM model is a novel approach in our study. We append a bidirectional LSTM layer to the last layer of the BERT model. This integration aims to leverage both the deep contextual understanding of BERT and the sequential data processing capability of BiLSTM. It is particularly designed to improve relation extraction from longer sentences where context dispersion is common.
 
-## Evaluation Metrics
+## 3.2. Evaluation Metrics
 We employ precision, recall, and F1-score to evaluate the model's performance. These metrics are crucial for understanding the balance between accurately identifying relationships and the model's ability to detect as many relevant relations as possible.
 
 # 4. NER Results
@@ -117,6 +117,8 @@ We employ precision, recall, and F1-score to evaluate the model's performance. T
 | RoBERTA-Large |      3e-5     |     16     |   5    | 0.7806 | 0.7293 | 0.7463 |   0.7703  | 19m47.1s | RTX4060Ti16G    | TensorFlow |
 | RoBERTA-Large |      3e-5     |     16     |   5    | 0.7835 | 0.7391 | 0.7457 |   0.7879  | 35m29.3s | RTX4060Ti16G    | TensorFlow |
 
-
 Some small not-syntax bugs exist in NRE problem. Using categorical accuracy.
 *Model and its result on testset are saved.
+
+<img width="409" alt="image" src="https://github.com/MarsSeo/NER/assets/103374757/2b69c567-84eb-4bef-a280-7613980230a7">
+Confusion Matrix: RoBERTa-large epoch=3, lr=3e-5
