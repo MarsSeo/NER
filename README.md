@@ -13,12 +13,15 @@ RoBERTa (Robustly Optimized BERT Pretraining Approach): An optimized version of 
 
 # 2. Background
 ## SemEval Dataset Overview
+<img width="836" alt="image" src="https://github.com/MarsSeo/NER/assets/103374757/0355e98d-61ce-4022-8e30-26c50cab19a7">
+
 The SemEval dataset is a rich and structured collection designed for training and evaluating relation extraction models. It includes:
 
-semeval_rel2id.json: This file maps various relationships to their indices. Each relationship is listed twice due to the varying positions of two entities, leading to a total of 19 unique relationships including the 'Other' category.
-semeval_train.txt & semeval_val.txt: These files split the original training set into training (6507 samples) and validation (1493 samples) subsets, formatted in JSON, and group samples by their relationships.
-semeval_test.txt: Contains 2717 samples in the same format as the training and validation sets.
-Sample Format: {"token": ["trees", "grow", "seeds", "."], "h": {"name": "trees", "pos": [0, 1]}, "t": {"name": "seeds", "pos": [2, 3]}, "relation": "Product-Producer(e2,e1)"}
+semeval_rel2id.json: This file maps various relationships to their indices. Each relationship is listed twice due to the varying positions of two entities, <br>
+leading to a total of 19 unique relationships including the 'Other' category. semeval_train.txt & semeval_val.txt:<br>
+These files split the original training set into training (6507 samples) and validation (1493 samples) subsets, formatted in JSON, and group samples by their relationships.<br>
+semeval_test.txt: Contains 2717 samples in the same format as the training and validation sets.<br>
+Sample Format: {"token": ["trees", "grow", "seeds", "."], "h": {"name": "trees", "pos": [0, 1]}, "t": {"name": "seeds", "pos": [2, 3]}, "relation": "Product-Producer(e2,e1)"}<br>
 
 ## Hardware and Software Specifications
 Hardware Configurations:<br>
