@@ -65,7 +65,9 @@ def modeling(config,datapack):
     steps_per_epoch = tf.data.experimental.cardinality(datapack.train_ds).numpy()
     num_train_steps = steps_per_epoch * config.EPOCHS
     num_warmup_steps = int(0.1*num_train_steps)
-
+    model_name="{}_EP{}_BS{}_LR{}_ML{}".format(config.ENCODER_TYPE,config.EPOCHS,config.BATCH_SIZE,config.LEARNING_RATE,config.MAX_LENGTH)
+    print("Building model:{}".format(model_name))
+    
     preprocessors={'bert-base':'https://tfhub.dev/tensorflow/bert_en_uncased_preprocess/3',
                 'bert-large':'https://tfhub.dev/tensorflow/bert_en_uncased_preprocess/3',
                 'roberta-base':'https://tfhub.dev/jeongukjae/roberta_en_cased_preprocess/1',
@@ -76,24 +78,23 @@ def modeling(config,datapack):
             'roberta-large':'https://www.kaggle.com/models/kaggle/roberta/frameworks/tensorFlow2/variations/en-cased-l-24-h-1024-a-16/versions/1'}
     preprocessor = hub.KerasLayer(preprocessors[config.ENCODER_TYPE], name='Preprocessor/Tokenizer')
     bert_layer = hub.KerasLayer(layers[config.ENCODER_TYPE], name='Encoder',trainable=True)
-        
+    
     optimizer = optimization.create_optimizer(init_lr=config.LEARNING_RATE,
                                             num_train_steps=num_train_steps,
                                             num_warmup_steps=num_warmup_steps,
                                             optimizer_type='adamw')
     model = build_classifier_model(len(datapack.reladict),encoder=bert_layer,preprocessor=preprocessor)
-    tf.keras.utils.plot_model(model)
+    tf.keras.utils.plot_model(model,'results/img/model.png')
     #print(model.summary())
     model.compile(optimizer=optimizer,
               loss=loss,
               metrics=metrics)
+    print('done.\nTraining...')
     trs_time=time.process_time()
-    
     history=model.fit(datapack.train_ds,validation_data=datapack.valid_ds,verbose=1,epochs=config.EPOCHS)
     tre_time=time.process_time()
     train_time=tre_time-trs_time
-    
-    model_name="{}_EP{}_BS{}_LR{}_ML{}".format(config.ENCODER_TYPE,config.EPOCHS,config.BATCH_SIZE,config.LEARNING_RATE,config.MAX_LENGTH)
+
 
     history_dict = history.history
     print(history_dict.keys())
@@ -121,7 +122,8 @@ def modeling(config,datapack):
     plt.savefig('results/img/RE/{}_history.png'.format(model_name))
     plt.close()
     
-
+    print('done.\nEvaluating...')
+    
     tss_time= time.process_time()
     y_pred=model.predict(datapack.testx,batch_size=config.BATCH_SIZE).argmax(axis=1)
     tse_time= time.process_time()
@@ -146,8 +148,8 @@ def modeling(config,datapack):
             'loss':loss.name,
             'class_name':datapack.invdict,
             'is_saved':config.SAVE_MODEL,
-            'devices':[gpu.name for gpu in GPUtil.getAvailable()],
-            'structure':model.summary()
+            'devices':[gpu.name for gpu in GPUtil.getGPUs()],
+            #'structure':model.summary()
             }
     
     if config.SAVE_MODEL:
@@ -161,5 +163,7 @@ def modeling(config,datapack):
     s['Results'].append(saved_data)
     with open('results/NRE_test_result.json','w',encoding='UTF-8')as f:
         json.dump(s,f,indent=2)
+    
+    print('done.')
     
     return model,saved_data
