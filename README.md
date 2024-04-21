@@ -24,8 +24,8 @@ semeval_test.txt: Contains 2717 samples in the same format as the training and v
 
 ## 2.2. Hardware and Software Specifications
 Hardware Configurations:<br>
-CPUs: M3 MAX 16 Core, Intel core i5-12700, AMD Ryzen 7 6800H<br>
-GPUs: M3 MAX 30, RTX4060TiAdvanced16G, T4 GPU (Google Colab)<br>
+CPUs: M3 MAX 16 Core, Intel Core i5-12400F, AMD Ryzen 7 6800H<br>
+GPUs: M3 MAX 30, RTX 4060 Ti AD 16G, T4 GPU (Google Colab)<br>
 Software Configurations:<br>
 Operating Systems: Windows, Mac; ;Programming Language: Python<br>
 Frameworks: PyTorch, TensorFlow, Transformers<br>
@@ -120,3 +120,17 @@ Some small not-syntax bugs exist in NRE problem. Using categorical accuracy.
 
 <img width="409" alt="image" src="https://github.com/MarsSeo/NER/assets/103374757/2b69c567-84eb-4bef-a280-7613980230a7">
 Confusion Matrix: RoBERTa-large epoch=3, lr=3e-5
+
+| Model         |PreMethod| Learning Rate | Batch Size | Epochs | Acc    | F1(ma) | Recall | Precision |   Time   |     Device      | Framework  |
+|:-------------:|:---:|:-------------:|:----------:|:------:|:------:|:------:|:------:|:---------:|:--------:|:---------------:|:----------:|
+| Bert-Base    |None    |      3e-5     |     16     |   8    | 0.7744 | 0.7301 | 0.7330 |   0.7855  | 14m16.1s | RTX4060Ti16G    | TensorFlow |
+| Bert-Base    |Replace |      3e-5     |     16     |   8    | 0.7656 | 0.7116 | 0.7154 |   0.7639  | 14m17.9s | RTX4060Ti16G    | TensorFlow |
+| Bert-Base    |Marking |      3e-5     |     16     |   8    | 0.8436 | 0.8044 | 0.8237 |   0.8422  | 14m9.7s | RTX4060Ti16G    | TensorFlow |
+| Bert-Base    |MarkingDiff |      3e-5     |     16     |   8    | 0.8432 | 0.8023 | 0.8159 |   0.8441  | 14m12.4s | RTX4060Ti16G    | TensorFlow |
+| Bert-Base     |MarkingEvery |      3e-5     |     16     |   8    | 0.8435 | 0.7995 | 0.8083 |   0.8454  | 14m25.2s | RTX4060Ti16G    | TensorFlow |
+
+| Model         |PreMethod| Learning Rate | Batch Size | Epochs | Acc    | F1(ma) | Recall | Precision |   Time   |     Device      | Framework  |
+|:-------------:|:---:|:-------------:|:----------:|:------:|:------:|:------:|:------:|:---------:|:--------:|:---------------:|:----------:|
+| Bert-Base     |Marking |      3e-5     |     16     |   8    | 0.8354 | 0.7902 | 0.7966 |   0.8406  | 14m9.7s | RTX4060Ti16G    | TensorFlow |
+| Bert-Base-BiLSTM|Marking |      3e-5     |     16     |   8    | 0.8425 | 0.7993 | 0.8079 |   0.8461  | 15m2.3s | RTX4060Ti16G    | TensorFlow |
+| RoBERTa-Base    |Marking |      3e-5     |     16     |   8    | 0.8447 | 0.8077 | 0.8175 |   0.8522  | 14m25.2s | RTX4060Ti16G    | TensorFlow |
