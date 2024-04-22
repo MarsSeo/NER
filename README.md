@@ -128,8 +128,13 @@ Confusion Matrix: RoBERTa-large epoch=3, lr=3e-5
 | Bert-Base    |MarkingDiff |      3e-5     |     16     |   8    | 0.8432 | 0.8023 | 0.8159 |   0.8441  | 14m12.4s | RTX4060Ti16G    | TensorFlow |
 | Bert-Base     |MarkingEvery |      3e-5     |     16     |   8    | 0.8435 | 0.7995 | 0.8083 |   0.8454  | 14m25.2s | RTX4060Ti16G    | TensorFlow |
 
+After optimized
+
 | Model         |PreMethod| Learning Rate | Batch Size | Epochs | Acc    | F1(ma) | Recall | Precision |   Time   |     Device      | Framework  |
 |:-------------:|:---:|:-------------:|:----------:|:------:|:------:|:------:|:------:|:---------:|:--------:|:---------------:|:----------:|
 | Bert-Base     |Marking |      3e-5     |     16     |   8    | 0.8354 | 0.7902 | 0.7966 |   0.8406  | 14m9.7s | RTX4060Ti16G    | TensorFlow |
+| Bert-Large    |Marking |      3e-5     |     16     |   8    | 0.8561 | 0.8172 | 0.8319 |   0.8572  | 38m38.8s | RTX4060Ti16G    | TensorFlow |
 | Bert-Base-BiLSTM|Marking |      3e-5     |     16     |   8    | 0.8425 | 0.7993 | 0.8079 |   0.8461  | 15m2.3s | RTX4060Ti16G    | TensorFlow |
+| Bert-Large-BiLSTM|Marking |      3e-5     |     16     |   8    | 0.8454 | 0.8070 | 0.8191 |   0.8500  | 41m18.3s | RTX4060Ti16G    | TensorFlow |
 | RoBERTa-Base    |Marking |      3e-5     |     16     |   8    | 0.8447 | 0.8077 | 0.8175 |   0.8522  | 14m25.2s | RTX4060Ti16G    | TensorFlow |
+| RoBERTa-Large   |Marking |      3e-5     |     16     |   8    | 0.8535 | 0.8130 | 0.8210 |   0.8596  | 58m15.5s | RTX4060Ti16G    | TensorFlow |
