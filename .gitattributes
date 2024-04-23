@@ -1,3 +1,4 @@
 *.pth filter=lfs diff=lfs merge=lfs -text
 D:/大学四年/大三下/知识图谱/NER/NER/bert_entity_recognizer.pth filter=lfs diff=lfs merge=lfs -text
 *.data filter=lfs diff=lfs merge=lfs -text
+*.data-00000-of-00001 filter=lfs diff=lfs merge=lfs -text
