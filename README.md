@@ -105,20 +105,19 @@ We employ precision, recall, and F1-score to evaluate the model's performance. T
 
 | Model         | Learning Rate | Batch Size | Epochs | F1(ma) | Recall | Precision |   Time   |     Device      | Framework  |
 |:-------------:|:-------------:|:----------:|:------:|:------:|:------:|:---------:|:--------:|:---------------:|:----------:|
-| Bert-Based    |      1e-5     |     16     |   5    | 0.6718 | 0.6818 |   0.7661  | 10m13.0s | RTX4060Ti16G    | TensorFlow |
+| Bert-Base     |      1e-5     |     16     |   5    | 0.6718 | 0.6818 |   0.7661  | 10m13.0s | RTX4060Ti16G    | TensorFlow |
 | Bert-Base     |      3e-5     |     16     |   3    | 0.7023 | 0.7113 |   0.7501  |  5m26.5s | RTX4060Ti16G    | TensorFlow |
 | Bert-Base     |      3e-5     |     16     |  5 OF  | 0.7198 | 0.7259 |   0.7693  |  8m59.1s | RTX4060Ti16G    | TensorFlow |
 | Bert-Base     |      3e-5     |     16     |  8 OF  | 0.7077 | 0.7180 |   0.7562  | 15m44.8s | RTX4060Ti16G    | TensorFlow |
 | Bert-Large    |      3e-5     |     16     |   3    | 0.7329 | 0.7453 |   0.7770  | 14m16.8s | RTX4060Ti16G    | TensorFlow |
-| Bert-Large*   |      3e-5     |     16     |   5    | 0.7241 | 0.7382 |   0.7665  | 24m55.3s | RTX4060Ti16G    | TensorFlow |
+| Bert-Large    |      3e-5     |     16     |   5    | 0.7241 | 0.7382 |   0.7665  | 24m55.3s | RTX4060Ti16G    | TensorFlow |
 | RoBERTa-Base  |      3e-5     |     16     |   3    | 0.7073 | 0.7205 |   0.7502  | 11m57.0s | RTX4060Ti16G    | TensorFlow |
-| RoBERTa-Base* |      3e-5     |     16     |   5    | 0.7246 | 0.7347 |   0.7698  | 21m40.0s | RTX4060Ti16G    | TensorFlow |
-| RoBERTA-Large |      3e-5     |     16     |   5    | 0.7293 | 0.7463 |   0.7703  | 19m47.1s | RTX4060Ti16G    | TensorFlow |
-| RoBERTA-Large |      3e-5     |     16     |   5    | 0.7391 | 0.7457 |   0.7879  | 35m29.3s | RTX4060Ti16G    | TensorFlow |
+| RoBERTa-Base  |      3e-5     |     16     |   5    | 0.7246 | 0.7347 |   0.7698  | 21m40.0s | RTX4060Ti16G    | TensorFlow |
+| RoBERTa-Large |      3e-5     |     16     |   5    | 0.7293 | 0.7463 |   0.7703  | 19m47.1s | RTX4060Ti16G    | TensorFlow |
+| RoBERTa-Large |      3e-5     |     16     |   5    | 0.7391 | 0.7457 |   0.7879  | 35m29.3s | RTX4060Ti16G    | TensorFlow |
 
-*Model and its result on testset are saved.
 
-Using different preprocessing method.
+## Using different preprocessing method.
 
 | Model         |PreMethod| Learning Rate | Batch Size | Epochs | Acc    | F1(ma) | Recall | Precision |   Time   |     Device      | Framework  |
 |:-------------:|:---:|:-------------:|:----------:|:------:|:------:|:------:|:------:|:---------:|:--------:|:---------------:|:----------:|
@@ -128,7 +127,8 @@ Using different preprocessing method.
 | Bert-Base    |MarkingDiff |      3e-5     |     16     |   8    | 0.8432 | 0.8023 | 0.8159 |   0.8441  | 14m12.4s | RTX4060Ti16G    | TensorFlow |
 | Bert-Base     |MarkingEvery |      3e-5     |     16     |   8    | 0.8435 | 0.7995 | 0.8083 |   0.8454  | 14m25.2s | RTX4060Ti16G    | TensorFlow |
 
-RE result after optimized
+## RE result after optimized
+Weight of models on this part is saved.
 
 | Model         |PreMethod| Learning Rate | Batch Size | Epochs | Acc    | F1(ma) | Recall | Precision |   Time   |     Device      | Framework  |
 |:-------------:|:---:|:-------------:|:----------:|:------:|:------:|:------:|:------:|:---------:|:--------:|:---------------:|:----------:|
