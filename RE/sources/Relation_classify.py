@@ -15,8 +15,8 @@ import json
 import time
 
 
-from Dataset import load_dataset
-from Models import ModelBuilder
+from sources.Dataset import load_dataset
+from sources.Models import ModelBuilder
 
 def evaluation(y_true,y_pred):
     acc=met.accuracy_score(y_true,y_pred)
@@ -38,7 +38,8 @@ def evaluation(y_true,y_pred):
             'Macro':{'precision':macro_p,'recall':macro_r,'f1':macro_f1},'Micro':{'precision':micro_p,'recall':micro_r,'f1':micro_f1},}
 
 class Classifier:
-    def build_model(this):
+    
+    def preprocess(this):
         this.train_ds,this.test_ds,this.valid_ds,classdict=load_dataset(this.data_path,this.config.PREPROCESS_METHOD)
         this.train_ds['data']=this.train_ds['data'].shuffle(5000).batch(this.config.BATCH_SIZE).prefetch(tf.data.AUTOTUNE)
         this.valid_ds['data']=this.valid_ds['data'].shuffle(5000).batch(this.config.BATCH_SIZE).prefetch(tf.data.AUTOTUNE)
@@ -48,27 +49,28 @@ class Classifier:
         for k,v in classdict.items():
             this.invdict[v]=k
 
-        tf.keras.backend.clear_session()
-
-        this.loss = tf.keras.losses.CategoricalCrossentropy(from_logits=True)
-        this.metrics = [tf.metrics.CategoricalAccuracy()]
-
+    def create_optimizer(this):
         steps_per_epoch = tf.data.experimental.cardinality(this.train_ds['data']).numpy()
         num_train_steps = steps_per_epoch * this.config.EPOCHS
         num_warmup_steps = int(0.1*num_train_steps)
-
         this.optimizer = optimization.create_optimizer(init_lr=this.config.LEARNING_RATE,
                                                 num_train_steps=num_train_steps,
                                                 num_warmup_steps=num_warmup_steps,
                                                 optimizer_type='adamw')
+    
+    def build_model(this):
+        
+        tf.keras.backend.clear_session()
 
+        this.loss = tf.keras.losses.CategoricalCrossentropy(from_logits=True)
+        this.metrics = [tf.metrics.CategoricalAccuracy()]
 
         this.model = ModelBuilder().build_classifier_model(len(classdict),this.config.ENCODER_TYPE,this.config.EXTRA_LAYERS)
         tf.keras.utils.plot_model(this.model,'results/img/REmodel.png')
         this.model.compile(optimizer=this.optimizer,
               loss=this.loss,
               metrics=this.metrics)
-        this.model_name="{}-{}_EP{}_BS{}_LR{}_ML{}".format(this.config.ENCODER_TYPE,this.config.EXTRA_LAYERS,this.config.EPOCHS,this.config.BATCH_SIZE,this.config.LEARNING_RATE,this.config.MAX_LENGTH)
+        
     
     def train_model(this):
         trs_time=time.process_time()
@@ -161,14 +163,20 @@ class Classifier:
             json.dump(saved_data,f,indent=2)
     
     def save_model_weight(this,path):
-        this.model.save('{}{}'.format(path,this.model_name))
+        this.model.save('{}{}'.format(path,this.model_name),include_optimizer=False)
 
     def predict(this,data):
+        try:
+            len(this.invdict)
+        except:
+            this.preprocess()
         pred=this.model.predict(data,batch_size=this.config.BATCH_SIZE).argmax(axis=1)
         res=[this.invdict[x] for x in pred]
         return res
 
     def run_task(this,save_result=False,save_weight=False,result_folder="results/",model_folder="models/"):
+        this.preprocess()
+        this.create_optimizer()
         this.build_model()
         this.train_model()
         this.plot_history(this.history)
@@ -178,6 +186,13 @@ class Classifier:
         if save_weight:
             this.save_model_weight(model_folder)
     
+    def load_and_test(this,file_path='models/'):
+        this.preprocess()
+        this.model=tf.keras.models.load_model(file_path+this.model_name)
+        this.test_model()
+    
     def __init__(this,data_path,config):
         this.data_path=data_path
         this.config=config
+        this.model_name="{}-{}_EP{}_BS{}_LR{}_ML{}".format(this.config.ENCODER_TYPE,this.config.EXTRA_LAYERS,this.config.EPOCHS,this.config.BATCH_SIZE,this.config.LEARNING_RATE,this.config.MAX_LENGTH)
+    
