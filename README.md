@@ -115,10 +115,10 @@ We employ precision, recall, and F1-score to evaluate the model's performance. T
 | RoBERTa-Base* |      3e-5     |     16     |   5    | 0.7246 | 0.7347 |   0.7698  | 21m40.0s | RTX4060Ti16G    | TensorFlow |
 | RoBERTA-Large |      3e-5     |     16     |   5    | 0.7293 | 0.7463 |   0.7703  | 19m47.1s | RTX4060Ti16G    | TensorFlow |
 | RoBERTA-Large |      3e-5     |     16     |   5    | 0.7391 | 0.7457 |   0.7879  | 35m29.3s | RTX4060Ti16G    | TensorFlow |
+
 *Model and its result on testset are saved.
 
-<img width="409" alt="image" src="https://github.com/MarsSeo/NER/assets/103374757/2b69c567-84eb-4bef-a280-7613980230a7">
-Confusion Matrix: RoBERTa-large epoch=3, lr=3e-5
+Using different preprocessing method.
 
 | Model         |PreMethod| Learning Rate | Batch Size | Epochs | Acc    | F1(ma) | Recall | Precision |   Time   |     Device      | Framework  |
 |:-------------:|:---:|:-------------:|:----------:|:------:|:------:|:------:|:------:|:---------:|:--------:|:---------------:|:----------:|
@@ -128,7 +128,7 @@ Confusion Matrix: RoBERTa-large epoch=3, lr=3e-5
 | Bert-Base    |MarkingDiff |      3e-5     |     16     |   8    | 0.8432 | 0.8023 | 0.8159 |   0.8441  | 14m12.4s | RTX4060Ti16G    | TensorFlow |
 | Bert-Base     |MarkingEvery |      3e-5     |     16     |   8    | 0.8435 | 0.7995 | 0.8083 |   0.8454  | 14m25.2s | RTX4060Ti16G    | TensorFlow |
 
-After optimized
+RE result after optimized
 
 | Model         |PreMethod| Learning Rate | Batch Size | Epochs | Acc    | F1(ma) | Recall | Precision |   Time   |     Device      | Framework  |
 |:-------------:|:---:|:-------------:|:----------:|:------:|:------:|:------:|:------:|:---------:|:--------:|:---------------:|:----------:|
@@ -138,3 +138,6 @@ After optimized
 | Bert-Large-BiLSTM|Marking |      3e-5     |     16     |   8    | 0.8454 | 0.8070 | 0.8191 |   0.8500  | 41m18.3s | RTX4060Ti16G    | TensorFlow |
 | RoBERTa-Base    |Marking |      3e-5     |     16     |   8    | 0.8447 | 0.8077 | 0.8175 |   0.8522  | 14m25.2s | RTX4060Ti16G    | TensorFlow |
 | RoBERTa-Large   |Marking |      3e-5     |     16     |   8    | 0.8535 | 0.8130 | 0.8210 |   0.8596  | 58m15.5s | RTX4060Ti16G    | TensorFlow |
+
+Please note that the models are only tested for one time each, results may have some stochastic error.
+Time cost is not so reliable since it depends on the usage distribution of device at training time.
